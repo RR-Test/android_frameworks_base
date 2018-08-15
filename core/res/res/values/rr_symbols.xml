@@ -185,4 +185,8 @@
     <java-symbol type="string" name="config_SmartChargingSupspendValue" />
     <java-symbol type="string" name="config_SmartChargingResumeValue" />
 
+    <!-- Alternative keyhandler -->
+    <java-symbol type="string" name="config_alternativeDeviceKeyHandlerLib" />
+    <java-symbol type="string" name="config_alternativeDeviceKeyHandlerClass" />
+    
 </resources>
