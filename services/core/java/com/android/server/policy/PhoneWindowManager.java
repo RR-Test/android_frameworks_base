@@ -7078,26 +7078,26 @@ public class PhoneWindowManager implements WindowManagerPolicy {
                     result &= ~ACTION_PASS_TO_USER;
                     return result;
                 }
-                if (!interactive && mAlternativeDeviceKeyHandler.isWakeEvent(event)) {
-                    if (DEBUG_INPUT) {
-                        Slog.i(TAG, "isWakeEvent from AlternativeDeviceKeyHandler");
-                    }
-                    wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey,
-                            PowerManager.WAKE_REASON_WAKE_KEY, "android.policy:KEY");
-                    result &= ~ACTION_PASS_TO_USER;
-                    return result;
-                }
-                final Intent eventLaunchActivity = mAlternativeDeviceKeyHandler.isActivityLaunchEvent(event);
-                if (!interactive && eventLaunchActivity != null) {
-                    if (DEBUG_INPUT) {
-                        Slog.i(TAG, "isActivityLaunchEvent from AlternativeDeviceKeyHandler " + eventLaunchActivity);
-                    }
-                    wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey,
-                            PowerManager.WAKE_REASON_WAKE_KEY, "android.policy:KEY");
-                    launchKeyguardDismissIntent(mContext, UserHandle.CURRENT, eventLaunchActivity);
-                    result &= ~ACTION_PASS_TO_USER;
-                    return result;
-                }
+                // if (!interactive && mAlternativeDeviceKeyHandler.isWakeEvent(event)) {
+                //     if (DEBUG_INPUT) {
+                //         Slog.i(TAG, "isWakeEvent from AlternativeDeviceKeyHandler");
+                //     }
+                //     wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey,
+                //             PowerManager.WAKE_REASON_WAKE_KEY, "android.policy:KEY");
+                //     result &= ~ACTION_PASS_TO_USER;
+                //     return result;
+                // }
+                // final Intent eventLaunchActivity = mAlternativeDeviceKeyHandler.isActivityLaunchEvent(event);
+                // if (!interactive && eventLaunchActivity != null) {
+                //     if (DEBUG_INPUT) {
+                //         Slog.i(TAG, "isActivityLaunchEvent from AlternativeDeviceKeyHandler " + eventLaunchActivity);
+                //     }
+                //     wakeUp(event.getEventTime(), mAllowTheaterModeWakeFromKey,
+                //             PowerManager.WAKE_REASON_WAKE_KEY, "android.policy:KEY");
+                //     launchKeyguardDismissIntent(mContext, UserHandle.CURRENT, eventLaunchActivity);
+                //     result &= ~ACTION_PASS_TO_USER;
+                //     return result;
+                // }
                 if (mAlternativeDeviceKeyHandler.handleKeyEvent(event)) {
                     result &= ~ACTION_PASS_TO_USER;
                     return result;
